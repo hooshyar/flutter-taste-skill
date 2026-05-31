@@ -1,6 +1,7 @@
 ---
 name: flutter-taste-skill
 description: Give AI-generated Flutter UI good taste. Encodes high-end mobile design DNA (bento grids, glassmorphism, mesh gradients, parametric "dials" for variance/motion/density, and a strict anti-slop ban list) into a portable Agent Skill. Use when building or restyling Flutter/Dart screens, when the user wants premium, Apple-like, or Dribbble-quality mobile UI, or wants to avoid generic Material "slop".
+license: MIT
 metadata:
   tags: [flutter, dart, ui, design, mobile, design-system, glassmorphism]
   homepage: https://github.com/hooshyar/flutter-taste-skill
