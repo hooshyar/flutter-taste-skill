@@ -47,7 +47,9 @@ This implementation follows the **Taste-Skill v2** architecture:
 ## 📸 Examples
 
 The showcase app (`lib/main.dart`) ships four fully realized screens, one per
-aesthetic direction. Screenshots below are captured from the live web build.
+aesthetic direction. Screenshots below are captured from the live web build at
+a phone viewport. Photography via [Unsplash](https://unsplash.com); each image
+degrades gracefully to a gradient placeholder when offline.
 
 | Showcase selector |
 | :---: |

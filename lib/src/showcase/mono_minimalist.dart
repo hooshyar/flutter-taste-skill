@@ -52,15 +52,46 @@ class MonoMinimalistScreen extends StatelessWidget {
             SliverPadding(
               padding: const EdgeInsets.symmetric(horizontal: 32),
               sliver: SliverToBoxAdapter(
-                child: Container(
-                  height: 400,
-                  width: double.infinity,
-                  decoration: const BoxDecoration(
-                    color: Color(0xFFF5F5F5),
-                  ),
-                  child: Center(
-                    child: Icon(Icons.architecture,
-                        size: 100, color: Colors.black.withValues(alpha: 0.05)),
+                child: ColorFiltered(
+                  // Desaturate to keep the strict mono / editorial aesthetic.
+                  colorFilter: const ColorFilter.matrix(<double>[
+                    0.2126,
+                    0.7152,
+                    0.0722,
+                    0,
+                    0,
+                    0.2126,
+                    0.7152,
+                    0.0722,
+                    0,
+                    0,
+                    0.2126,
+                    0.7152,
+                    0.0722,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    0,
+                  ]),
+                  child: SizedBox(
+                    height: 400,
+                    width: double.infinity,
+                    child: Image.network(
+                      // Architectural facade (Unsplash).
+                      'https://images.unsplash.com/photo-1486718448742-163732cd1544?w=800&q=80',
+                      fit: BoxFit.cover,
+                      errorBuilder: (context, error, stack) => Container(
+                        color: const Color(0xFFF5F5F5),
+                        child: Center(
+                          child: Icon(Icons.architecture,
+                              size: 100,
+                              color: Colors.black.withValues(alpha: 0.05)),
+                        ),
+                      ),
+                    ),
                   ),
                 ).animateEntrance(index: 2),
               ),

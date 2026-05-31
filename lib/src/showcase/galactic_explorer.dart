@@ -79,6 +79,21 @@ class GalacticExplorerScreen extends StatelessWidget {
                                 glowColor: Colors.blueAccent,
                                 child: Stack(
                                   children: [
+                                    // Faint Earth-from-space photo behind the
+                                    // sector readout. Low opacity keeps the
+                                    // white text legible; vanishes if offline.
+                                    Positioned.fill(
+                                      child: Opacity(
+                                        opacity: 0.35,
+                                        child: Image.network(
+                                          'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80',
+                                          fit: BoxFit.cover,
+                                          errorBuilder:
+                                              (context, error, stack) =>
+                                                  const SizedBox.shrink(),
+                                        ),
+                                      ),
+                                    ),
                                     Positioned(
                                       right: -30,
                                       bottom: -30,
