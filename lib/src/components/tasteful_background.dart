@@ -32,7 +32,7 @@ class TastefulBackground extends StatelessWidget {
                 end: Alignment.bottomRight,
                 colors: [
                   colorScheme.surface,
-                  colorScheme.surfaceContainerHighest.withOpacity(0.5),
+                  colorScheme.surfaceContainerHighest.withValues(alpha: 0.5),
                   colorScheme.surface,
                 ],
                 stops: const [0.0, 0.5, 1.0],
@@ -73,10 +73,10 @@ class GlassContainer extends StatelessWidget {
         filter: ImageFilter.blur(sigmaX: blur, sigmaY: blur),
         child: Container(
           decoration: BoxDecoration(
-            color: colorScheme.surface.withOpacity(opacity),
+            color: colorScheme.surface.withValues(alpha: opacity),
             borderRadius: BorderRadius.circular(borderRadius),
             border: Border.all(
-              color: colorScheme.outlineVariant.withOpacity(0.2),
+              color: colorScheme.outlineVariant.withValues(alpha: 0.2),
               width: 0.5,
             ),
           ),

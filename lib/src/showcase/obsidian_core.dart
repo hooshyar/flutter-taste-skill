@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_taste_skill/flutter_taste_skill.dart';
 
 /// --- THE OBSIDIAN CORE (Fintech / Crypto Pro) ---
@@ -10,15 +9,14 @@ class ObsidianCoreScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = TasteTheme.createTheme(const Color(0xFF0F172A), brightness: Brightness.dark);
-    final colorScheme = theme.colorScheme;
-    
+
     return Theme(
       data: theme,
       child: Scaffold(
         backgroundColor: const Color(0xFF020617),
         body: MeshGradientBackground(
-          primaryColor: Colors.cyan.withOpacity(0.08),
-          secondaryColor: Colors.indigo.withOpacity(0.12),
+          primaryColor: Colors.cyan.withValues(alpha: 0.08),
+          secondaryColor: Colors.indigo.withValues(alpha: 0.12),
           child: SafeArea(
             bottom: false,
             child: Padding(
@@ -39,7 +37,7 @@ class ObsidianCoreScreen extends StatelessWidget {
                                 style: GoogleFonts.spaceMono(
                                   fontSize: 12,
                                   letterSpacing: 2,
-                                  color: Colors.cyanAccent.withOpacity(0.6),
+                                  color: Colors.cyanAccent.withValues(alpha: 0.6),
                                   fontWeight: FontWeight.bold,
                                 ),
                               ).animateEntrance(index: 0),
@@ -53,10 +51,10 @@ class ObsidianCoreScreen extends StatelessWidget {
                               ).animateEntrance(index: 1),
                             ],
                           ),
-                          HighEndGlassCard(
+                          const HighEndGlassCard(
                             borderRadius: 16,
                             opacity: 0.1,
-                            child: const Padding(
+                            child: Padding(
                               padding: EdgeInsets.all(12.0),
                               child: Icon(Icons.qr_code_scanner, size: 20),
                             ),
@@ -90,7 +88,7 @@ class ObsidianCoreScreen extends StatelessWidget {
                                           fontSize: 10, 
                                           fontWeight: FontWeight.bold,
                                           letterSpacing: 1,
-                                          color: Colors.white.withOpacity(0.5),
+                                          color: Colors.white.withValues(alpha: 0.5),
                                         ),
                                       ),
                                     ],
@@ -163,7 +161,7 @@ class ObsidianCoreScreen extends StatelessWidget {
                           ),
                         ),
 
-                        BentoItem(
+                        const BentoItem(
                           columnSpan: 4,
                           height: 300,
                           child: HighEndGlassCard(
@@ -171,11 +169,11 @@ class ObsidianCoreScreen extends StatelessWidget {
                             child: Column(
                               children: [
                                 _AssetRow(icon: Icons.currency_bitcoin, name: 'Bitcoin', symbol: 'BTC', value: '\$32,100', change: '+2.4%'),
-                                const Divider(height: 1, color: Colors.white10),
+                                Divider(height: 1, color: Colors.white10),
                                 _AssetRow(icon: Icons.api_outlined, name: 'Ethereum', symbol: 'ETH', value: '\$2,450', change: '-1.2%'),
-                                const Divider(height: 1, color: Colors.white10),
+                                Divider(height: 1, color: Colors.white10),
                                 _AssetRow(icon: Icons.token_outlined, name: 'Solana', symbol: 'SOL', value: '\$145', change: '+14.8%'),
-                                const Divider(height: 1, color: Colors.white10),
+                                Divider(height: 1, color: Colors.white10),
                                 _AssetRow(icon: Icons.diamond_outlined, name: 'Polkadot', symbol: 'DOT', value: '\$7.2', change: '+0.5%'),
                               ],
                             ),
@@ -221,7 +219,7 @@ class _AssetRow extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(10),
             decoration: BoxDecoration(
-              color: Colors.white.withOpacity(0.05),
+              color: Colors.white.withValues(alpha: 0.05),
               borderRadius: BorderRadius.circular(12),
             ),
             child: Icon(icon, size: 20, color: Colors.white70),

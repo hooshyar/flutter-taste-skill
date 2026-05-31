@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_taste_skill/flutter_taste_skill.dart';
 
 /// --- THE CLOUD PORTAL (Wellness / Lifestyle) ---
@@ -71,7 +70,7 @@ class CloudPortalScreen extends StatelessWidget {
                               ),
                             ),
                             child: Center(
-                              child: Icon(Icons.wb_sunny_outlined, size: 80, color: colorScheme.primary.withOpacity(0.2)),
+                              child: Icon(Icons.wb_sunny_outlined, size: 80, color: colorScheme.primary.withValues(alpha: 0.2)),
                             ),
                           ),
                           Padding(

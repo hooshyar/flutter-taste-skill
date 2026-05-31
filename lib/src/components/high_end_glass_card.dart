@@ -32,13 +32,13 @@ class HighEndGlassCard extends StatelessWidget {
         boxShadow: [
           // Ambient shadow
           BoxShadow(
-            color: Colors.black.withOpacity(0.2),
+            color: Colors.black.withValues(alpha: 0.2),
             blurRadius: 20,
             offset: const Offset(0, 10),
           ),
           if (showGlow && glowColor != null)
             BoxShadow(
-              color: glowColor!.withOpacity(0.15),
+              color: glowColor!.withValues(alpha: 0.15),
               blurRadius: 40,
               spreadRadius: 5,
             ),
@@ -55,11 +55,11 @@ class HighEndGlassCard extends StatelessWidget {
               borderRadius: BorderRadius.circular(borderRadius),
               child: Container(
                 decoration: BoxDecoration(
-                  color: colorScheme.surface.withOpacity(opacity),
+                  color: colorScheme.surface.withValues(alpha: opacity),
                   borderRadius: BorderRadius.circular(borderRadius),
                   // The "High-End" Secret: 1px inner stroke
                   border: Border.all(
-                    color: Colors.white.withOpacity(0.12),
+                    color: Colors.white.withValues(alpha: 0.12),
                     width: 1,
                   ),
                 ),
