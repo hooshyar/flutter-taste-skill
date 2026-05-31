@@ -44,5 +44,36 @@ This implementation follows the **Taste-Skill v2** architecture:
 - **Cloud:** Editorial soft mode, massive whitespace, subtle shadows.
 - **Brutalist:** Raw industrial mode, sharp corners, thick borders, monospace.
 
+## 📸 Examples
+
+The showcase app (`lib/main.dart`) ships four fully realized screens, one per
+aesthetic direction. Screenshots below are captured from the live web build.
+
+| Showcase selector |
+| :---: |
+| ![Showcase selector](docs/examples/selector.png) |
+
+### Obsidian Core
+Fintech / crypto pro. Dark glassmorphism, cyan accent, bento layout.
+
+![Obsidian Core](docs/examples/obsidian/preview.png)
+
+### Cloud Portal
+Editorial soft mode. Serif display type, pastel cells, generous whitespace.
+
+![Cloud Portal](docs/examples/cloud/preview.png)
+
+### Galactic Explorer
+Sci-fi / deep space. Nebula mesh gradient (teal + blue + magenta, no lazy
+indigo-purple), glowing glass bento, drifting star particles.
+
+![Galactic Explorer](docs/examples/galactic/preview.png)
+
+### Mono Minimalist
+Brutalist-leaning editorial. Stark light canvas, oversized italic headline,
+monospace labels.
+
+![Mono Minimalist](docs/examples/minimalist/preview.png)
+
 ---
 *Created by [Your Name/Org] • Inspired by [Leonxlnx](https://github.com/Leonxlnx)*
