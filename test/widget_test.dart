@@ -20,6 +20,8 @@ void main() {
     expect(find.text('CLOUD_PORTAL'), findsOneWidget);
     expect(find.text('GALACTIC_EXPLORER'), findsOneWidget);
     expect(find.text('MONO_MINIMALIST'), findsOneWidget);
+    expect(find.text('ARABESQUE_ATELIER'), findsOneWidget);
+    expect(find.text('SORANI_MODERN'), findsOneWidget);
   });
 
   testWidgets('Tapping a variant navigates away from the selector',

@@ -5,6 +5,8 @@ import 'package:flutter_taste_skill/src/showcase/obsidian_core.dart';
 import 'package:flutter_taste_skill/src/showcase/cloud_portal.dart';
 import 'package:flutter_taste_skill/src/showcase/galactic_explorer.dart';
 import 'package:flutter_taste_skill/src/showcase/mono_minimalist.dart';
+import 'package:flutter_taste_skill/src/showcase/arabesque_atelier.dart';
+import 'package:flutter_taste_skill/src/showcase/sorani_modern.dart';
 
 void main() {
   runApp(const TasteShowcaseApp());
@@ -22,6 +24,8 @@ class TasteShowcaseApp extends StatelessWidget {
         GoRoute(path: '/cloud', builder: (context, state) => const CloudPortalScreen()),
         GoRoute(path: '/galactic', builder: (context, state) => const GalacticExplorerScreen()),
         GoRoute(path: '/minimal', builder: (context, state) => const MonoMinimalistScreen()),
+        GoRoute(path: '/arabic', builder: (context, state) => const ArabesqueAtelierScreen()),
+        GoRoute(path: '/kurdish', builder: (context, state) => const SoraniModernScreen()),
       ],
     );
 
@@ -56,6 +60,10 @@ class ShowcaseSelector extends StatelessWidget {
               _SelectorButton(label: 'GALACTIC_EXPLORER', onTap: () => context.go('/galactic'), color: Colors.pinkAccent),
               const SizedBox(height: 16),
               _SelectorButton(label: 'MONO_MINIMALIST', onTap: () => context.go('/minimal'), color: Colors.white),
+              const SizedBox(height: 16),
+              _SelectorButton(label: 'ARABESQUE_ATELIER', onTap: () => context.go('/arabic'), color: const Color(0xFFD4AF37)),
+              const SizedBox(height: 16),
+              _SelectorButton(label: 'SORANI_MODERN', onTap: () => context.go('/kurdish'), color: const Color(0xFFE0584F)),
             ],
           ),
         ),

@@ -63,6 +63,12 @@ If two screens at different dial settings look the same, the dials were ignored.
 - Add a subtle **Noise Texture** (using a shader or a low-opacity PNG) to backgrounds for a tactile feel.
 - Accent colors should "glow" using `BoxShadow(spreadRadius: 5, blurRadius: 40)`.
 
+### 4. Direction & Script (RTL / multilingual)
+- For Arabic and Sorani Kurdish, wrap the screen in `Directionality(textDirection: TextDirection.rtl, ...)` and let `Row`/`Column`/`start` alignments mirror; never hardcode `left`/`right`.
+- Pick fonts that actually cover the script. Arabic: `Amiri` or `Aref Ruqaa` (display), `Reem Kufi` (geometric labels), `Cairo`/`Tajawal` (body). Sorani: `Vazirmatn` (full Sorani glyphs); `Lalezar` lacks some Sorani letters (`ێ ۆ ڵ`) so use it only for display text that avoids them.
+- Use the locale's numerals (Eastern Arabic `٠١٢٣٤٥٦٧٨٩`) and reach for native ornament (an 8-point-star khatam field beats a stock photo) over generic "global" decoration.
+- Always RENDER and read RTL output before declaring it done: confirm joining, direction, and that no glyph falls back to tofu.
+
 ## 🚫 Anti-Slop Ban List (CRITICAL)
 1. **EM-DASH BAN:** Physically impossible to type `—` or `–`.
 2. **Boilerplate Ban:** No "Hello World," "Counter," or "Sample Item."

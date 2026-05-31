@@ -89,5 +89,19 @@ monospace labels.
 
 ![Mono Minimalist](docs/examples/minimalist/preview.png)
 
+### Arabesque Atelier (Arabic, RTL)
+Traditional Arabic heritage. Cream + emerald + gold, a hand-drawn 8-point-star
+(khatam) geometric field, calligraphic display (Aref Ruqaa), geometric Kufi
+labels (Reem Kufi), Naskh body (Cairo). Fully right-to-left.
+
+![Arabesque Atelier](docs/examples/arabic/preview.png)
+
+### Sorani Modern (Kurdish, RTL)
+Contemporary Kurdish reading app. Warm sand canvas, a Kurdish sun-ray motif, a
+single deep-red accent, real mountain photography, and Vazirmatn throughout for
+full Sorani glyph coverage (Estedad / Lalezar are drop-in swaps). Right-to-left.
+
+![Sorani Modern](docs/examples/kurdish/preview.png)
+
 ---
 *Created by [Hooshyar](https://github.com/hooshyar) • Inspired by [Leonxlnx](https://github.com/Leonxlnx)*
