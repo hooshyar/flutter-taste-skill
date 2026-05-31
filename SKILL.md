@@ -18,20 +18,33 @@ Before writing a single widget, you MUST "read the room."
 - **Dial Setting:** Confirm the provided parameters (Variance, Motion, Density).
 
 ## 🎛️ The Three Dials (Parametric Design)
-Adjust intensity on a scale of 1-10.
+Adjust intensity on a scale of 1-10. Each band maps to **specific widget
+decisions**, not a vibe. Pick a number, then build what the band says.
 
-- `FLUTTER_LAYOUT_VARIANCE`:
-  - `1-3`: Standard Column/ListView (Safe/Boring).
-  - `5-7`: Asymmetric sections, overlapping elements, horizontal card stacks.
-  - `10`: Complex Bento Grids, non-linear navigation, 3D transformations.
-- `FLUTTER_MOTION`:
-  - `1-3`: Subtle fades, Hero transitions.
-  - `5-7`: Staggered entrances, spring-loaded micro-interactions, layout morphs.
-  - `10`: Rive-based state machines, complex scroll-driven effects, magnetic icons.
-- `FLUTTER_DENSITY`:
-  - `1-3`: "Luxury" spacing, massive white space, editorial feel.
-  - `5-7`: Standard mobile app density.
-  - `10`: Data-heavy dashboards, compact grids, professional tooling.
+### `FLUTTER_LAYOUT_VARIANCE` (how the widget tree is shaped)
+- `1-3`: One `ListView`/`Column`. Uniform full-width cards. One column, equal padding.
+- `4-6`: One full-width hero, then a 2-up `Row` of `Expanded` cells. Mixed cell widths, asymmetric padding.
+- `7-9`: `CustomScrollView` + slivers. Bento where one cell spans 2 columns; a `Stack` with an overlapping accent (offset icon/number); a horizontal `ListView` for secondary content.
+- `10`: Multi-span bento via `StaggeredGrid` or a custom `MultiChildLayoutDelegate`; `Transform` perspective on the hero; non-linear navigation.
+
+### `FLUTTER_MOTION` (what animates, and how)
+- `1-3`: `AnimatedOpacity` or `Hero` only. 200-300ms fades. No entrance choreography.
+- `4-6`: `flutter_animate` staggered entrance keyed on `index * 50ms`; press feedback (`scale` to 0.97 on tap down).
+- `7-9`: Scroll-driven effects (`SliverAppBar` stretch, opacity/parallax tied to scroll offset); shared-axis page transitions.
+- `10`: Rive state machines; physics or magnetic interactions; layout morphs between states.
+
+### `FLUTTER_DENSITY` (spacing and information per screen)
+- `1-3`: 32-48px section padding, `height: 1.5` line spacing, body 18-24px, ONE primary action per view. Editorial.
+- `4-6`: 16-20px padding, body 14-16px, a few grouped actions. Standard mobile.
+- `7-9`: 8-12px gaps, labels 12-13px, compact rows and data tables, multiple live values. Dashboard.
+
+### Worked example: a profile screen at two settings
+Same content, two dial sets, two different builds:
+
+- **`VARIANCE:2, MOTION:2, DENSITY:2`** → a `ListView` with a centered avatar, a name, then full-width `TastefulCard`s stacked vertically with 32px gaps; a single fade-in on load.
+- **`VARIANCE:8, MOTION:6, DENSITY:5`** → a `CustomScrollView`: a `SliverAppBar` with a stretchy header image, then a bento where the avatar+name cell spans 2 columns and stat cells sit 2-up beside it, an overlapping badge via `Stack`, and cards that stagger in on `index * 60ms` and dip to `scale: 0.97` on press.
+
+If two screens at different dial settings look the same, the dials were ignored.
 
 ## 💎 Design Standards (The "High-End" Look)
 
