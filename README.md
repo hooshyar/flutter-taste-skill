@@ -7,12 +7,22 @@ Inspired by the groundbreaking [taste-skill](https://github.com/Leonxlnx/taste-s
 ## 🚀 Quick Start
 
 ### 1. Installation
-Since this is a set of "Agent Skills," you can use it in two ways:
 
-#### **For Gemini CLI / Cursor / Claude Code:**
-Add the `SKILL.md` content to your system prompt or project instructions.
+#### **One command (recommended) — works across 18+ agents:**
+This repo is a spec-compliant [Agent Skill](https://skills.sh). Install it into
+Claude Code, Cursor, Gemini CLI, Codex, GitHub Copilot, Windsurf, Cline, and
+more with the [Vercel `skills` CLI](https://skills.sh):
+```bash
+npx skills add hooshyar/flutter-taste-skill
+```
 
-#### **As a Dependency (Optional Reference Widgets):**
+#### **Cursor (project rule):**
+Copy `rules/flutter-taste.mdc` into your project's `.cursor/rules/` directory.
+
+#### **Any agent (manual):**
+Add the contents of `SKILL.md` to your system prompt or project instructions.
+
+#### **As a Flutter dependency (optional reference widgets):**
 ```yaml
 dependencies:
   flutter_taste_skill:
