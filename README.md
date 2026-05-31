@@ -41,9 +41,27 @@ dependencies:
 ```
 
 ### 2. Usage
-When prompting your AI, set your **Three Dials** and pick an **Aesthetic Variant**:
 
-> "Build a profile screen. Settings: `FLUTTER_LAYOUT_VARIANCE: 7`, `FLUTTER_MOTION: 5`, `FLUTTER_DENSITY: 3`. Variant: Cloud."
+**The simple way: just ask.** Once installed via `npx skills add`, the skill
+activates automatically when you ask your agent to build or restyle Flutter UI.
+It self-describes when to apply, so you usually invoke nothing:
+
+> "Build a crypto portfolio screen in Flutter."
+
+**Steer it.** Set the **Three Dials** (each 1-10) and pick an **Aesthetic
+Variant** to control the output:
+
+> "Build a profile screen. `FLUTTER_LAYOUT_VARIANCE: 7`, `FLUTTER_MOTION: 5`, `FLUTTER_DENSITY: 3`. Variant: Cloud."
+
+**Arabic / Kurdish Sorani.** Just say so; the skill applies its RTL and
+script-aware rules (fonts, numerals, direction):
+
+> "Build an Arabic reading screen, right-to-left, traditional."
+
+> "Build a Kurdish Sorani news feed, modern and clean."
+
+**Manual install?** If you pasted `SKILL.md` instead of using the CLI, keep that
+content in your system prompt or project rules so it stays in context.
 
 ## 🎛️ The v2 System
 This implementation follows the **Taste-Skill v2** architecture:
