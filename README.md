@@ -17,7 +17,7 @@ Add the `SKILL.md` content to your system prompt or project instructions.
 dependencies:
   flutter_taste_skill:
     git:
-      url: https://github.com/your-username/flutter-taste-skill.git
+      url: https://github.com/hooshyar/flutter-taste-skill.git
 ```
 
 ### 2. Usage
@@ -76,4 +76,4 @@ monospace labels.
 ![Mono Minimalist](docs/examples/minimalist/preview.png)
 
 ---
-*Created by [Your Name/Org] • Inspired by [Leonxlnx](https://github.com/Leonxlnx)*
+*Created by [Hooshyar](https://github.com/hooshyar) • Inspired by [Leonxlnx](https://github.com/Leonxlnx)*
