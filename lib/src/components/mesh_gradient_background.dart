@@ -22,9 +22,9 @@ class MeshGradientBackground extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
-    final pColor = primaryColor ?? colorScheme.primary.withOpacity(0.15);
-    final sColor = secondaryColor ?? colorScheme.secondary.withOpacity(0.1);
-    final tColor = tertiaryColor ?? colorScheme.tertiary.withOpacity(0.05);
+    final pColor = primaryColor ?? colorScheme.primary.withValues(alpha: 0.15);
+    final sColor = secondaryColor ?? colorScheme.secondary.withValues(alpha: 0.1);
+    final tColor = tertiaryColor ?? colorScheme.tertiary.withValues(alpha: 0.05);
 
     return Stack(
       children: [

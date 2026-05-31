@@ -9,6 +9,15 @@
 # packages, and plugins designed to encourage good coding practices.
 include: package:flutter_lints/flutter.yaml
 
+# Taste-Skill enforcement: turn the skill's "MUST" rules into build failures
+# instead of prose the model can ignore. Pairs with tool/anti_slop_check.sh
+# for the rules the Dart analyzer cannot see (em-dash, AI-purple, boilerplate).
+analyzer:
+  errors:
+    # SKILL.md mandates .withValues(alpha:) over the deprecated .withOpacity().
+    # Escalated from `info` to `error` so a regression breaks `flutter analyze`.
+    deprecated_member_use: error
+
 linter:
   # The lint rules applied to this project can be customized in the
   # section below to disable rules from the `package:flutter_lints/flutter.yaml`

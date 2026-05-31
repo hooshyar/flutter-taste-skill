@@ -1,30 +1,38 @@
-// This is a basic Flutter widget test.
+// Widget tests for the Taste Skill showcase app.
 //
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility in the flutter_test package. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
+// Note: the previous version of this file was the default Flutter counter
+// smoke test. That was both broken (it referenced a non-existent `MyApp`)
+// and a violation of the skill's own Boilerplate Ban. It now tests the real
+// `TasteShowcaseApp` selector and its navigation.
 
-import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:flutter_taste_skill/main.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
-
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
-
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
+  testWidgets('Showcase selector renders all four aesthetic variants',
+      (WidgetTester tester) async {
+    await tester.pumpWidget(const TasteShowcaseApp());
     await tester.pump();
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    expect(find.text('FLUTTER_TASTE_SKILL_V2'), findsOneWidget);
+    expect(find.text('OBSIDIAN_CORE'), findsOneWidget);
+    expect(find.text('CLOUD_PORTAL'), findsOneWidget);
+    expect(find.text('GALACTIC_EXPLORER'), findsOneWidget);
+    expect(find.text('MONO_MINIMALIST'), findsOneWidget);
+  });
+
+  testWidgets('Tapping a variant navigates away from the selector',
+      (WidgetTester tester) async {
+    await tester.pumpWidget(const TasteShowcaseApp());
+    await tester.pump();
+
+    await tester.tap(find.text('OBSIDIAN_CORE'));
+    // Avoid pumpAndSettle: some showcase screens run looping animations that
+    // never settle. Advance time manually past the entrance animations.
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 800));
+
+    expect(find.text('FLUTTER_TASTE_SKILL_V2'), findsNothing);
   });
 }

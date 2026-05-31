@@ -29,18 +29,18 @@ class TastefulCard extends StatelessWidget {
         color: colorScheme.surface,
         borderRadius: BorderRadius.circular(24),
         border: Border.all(
-          color: colorScheme.outlineVariant.withOpacity(0.5),
+          color: colorScheme.outlineVariant.withValues(alpha: 0.5),
           width: 1,
         ),
         boxShadow: [
           // Multi-layered shadow for premium depth
           BoxShadow(
-            color: colorScheme.shadow.withOpacity(0.04),
+            color: colorScheme.shadow.withValues(alpha: 0.04),
             blurRadius: 10,
             offset: const Offset(0, 4),
           ),
           BoxShadow(
-            color: colorScheme.shadow.withOpacity(0.06),
+            color: colorScheme.shadow.withValues(alpha: 0.06),
             blurRadius: 20,
             offset: const Offset(0, 8),
           ),
@@ -52,8 +52,8 @@ class TastefulCard extends StatelessWidget {
           color: Colors.transparent,
           child: InkWell(
             onTap: onTap,
-            splashColor: colorScheme.primary.withOpacity(0.05),
-            highlightColor: colorScheme.primary.withOpacity(0.02),
+            splashColor: colorScheme.primary.withValues(alpha: 0.05),
+            highlightColor: colorScheme.primary.withValues(alpha: 0.02),
             child: Padding(
               padding: padding,
               child: child,

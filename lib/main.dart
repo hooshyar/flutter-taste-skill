@@ -53,7 +53,7 @@ class ShowcaseSelector extends StatelessWidget {
               const SizedBox(height: 16),
               _SelectorButton(label: 'CLOUD_PORTAL', onTap: () => context.go('/cloud'), color: Colors.white70),
               const SizedBox(height: 16),
-              _SelectorButton(label: 'GALACTIC_EXPLORER', onTap: () => context.go('/galactic'), color: Colors.deepPurpleAccent),
+              _SelectorButton(label: 'GALACTIC_EXPLORER', onTap: () => context.go('/galactic'), color: Colors.pinkAccent),
               const SizedBox(height: 16),
               _SelectorButton(label: 'MONO_MINIMALIST', onTap: () => context.go('/minimal'), color: Colors.white),
             ],
@@ -78,7 +78,7 @@ class _SelectorButton extends StatelessWidget {
         width: 260,
         padding: const EdgeInsets.symmetric(vertical: 20),
         decoration: BoxDecoration(
-          border: Border.all(color: color.withOpacity(0.3)),
+          border: Border.all(color: color.withValues(alpha: 0.3)),
           borderRadius: BorderRadius.circular(8),
         ),
         child: Text(label, 
