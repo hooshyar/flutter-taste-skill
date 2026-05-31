@@ -50,9 +50,11 @@ This implementation follows the **Taste-Skill v2** architecture:
 - `GEMINI.md`: Specific instructions for the Gemini CLI agent.
 
 ## 🦋 Aesthetic Variants
-- **Obsidian:** Pro-grade dark mode, glassmorphism, high contrast.
-- **Cloud:** Editorial soft mode, massive whitespace, subtle shadows.
-- **Brutalist:** Raw industrial mode, sharp corners, thick borders, monospace.
+The four showcase screens each embody one direction (see [Examples](#-examples) below):
+- **Obsidian:** Pro-grade dark mode, glassmorphism, high contrast (fintech / crypto).
+- **Cloud:** Editorial soft mode, serif display type, massive whitespace (wellness / lifestyle).
+- **Galactic:** Sci-fi deep space, nebula mesh gradients, glowing glass bento.
+- **Mono Minimalist:** Brutalist-leaning editorial, stark light canvas, monospace labels.
 
 ## 📸 Examples
 
