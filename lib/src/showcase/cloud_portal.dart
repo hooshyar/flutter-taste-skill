@@ -8,7 +8,8 @@ class CloudPortalScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = TasteTheme.createTheme(const Color(0xFFF1F5F9), brightness: Brightness.light);
+    final theme = TasteTheme.createTheme(const Color(0xFFF1F5F9),
+        brightness: Brightness.light);
     final colorScheme = theme.colorScheme;
 
     return Theme(
@@ -24,10 +25,12 @@ class CloudPortalScreen extends StatelessWidget {
                 // --- Premium Header ---
                 SliverToBoxAdapter(
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 40),
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 24.0, vertical: 40),
                     child: Column(
                       children: [
-                        Text('SUNDAY, MAY 24', 
+                        Text(
+                          'SUNDAY, MAY 24',
                           style: GoogleFonts.inter(
                             fontSize: 12,
                             fontWeight: FontWeight.bold,
@@ -36,7 +39,8 @@ class CloudPortalScreen extends StatelessWidget {
                           ),
                         ).animateEntrance(index: 0),
                         const SizedBox(height: 12),
-                        Text('Good Morning,\nBreathe.', 
+                        Text(
+                          'Good Morning,\nBreathe.',
                           textAlign: TextAlign.center,
                           style: GoogleFonts.newsreader(
                             fontSize: 48,
@@ -59,18 +63,35 @@ class CloudPortalScreen extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Container(
+                          SizedBox(
                             height: 240,
                             width: double.infinity,
-                            decoration: BoxDecoration(
-                              gradient: LinearGradient(
-                                colors: [colorScheme.primaryContainer, colorScheme.secondaryContainer],
-                                begin: Alignment.topLeft,
-                                end: Alignment.bottomRight,
+                            child: Image.network(
+                              // Calm ocean mist (Unsplash). Sets a serene tone
+                              // for the wellness hero.
+                              'https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=800&q=80',
+                              fit: BoxFit.cover,
+                              // Degrade gracefully to the original gradient if
+                              // the network image cannot load (offline build).
+                              errorBuilder: (context, error, stack) =>
+                                  Container(
+                                decoration: BoxDecoration(
+                                  gradient: LinearGradient(
+                                    colors: [
+                                      colorScheme.primaryContainer,
+                                      colorScheme.secondaryContainer,
+                                    ],
+                                    begin: Alignment.topLeft,
+                                    end: Alignment.bottomRight,
+                                  ),
+                                ),
+                                child: Center(
+                                  child: Icon(Icons.wb_sunny_outlined,
+                                      size: 80,
+                                      color: colorScheme.primary
+                                          .withValues(alpha: 0.2)),
+                                ),
                               ),
-                            ),
-                            child: Center(
-                              child: Icon(Icons.wb_sunny_outlined, size: 80, color: colorScheme.primary.withValues(alpha: 0.2)),
                             ),
                           ),
                           Padding(
@@ -78,13 +99,21 @@ class CloudPortalScreen extends StatelessWidget {
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text('RECOMMENDED FOR YOU', 
-                                  style: GoogleFonts.inter(fontSize: 10, fontWeight: FontWeight.bold, letterSpacing: 1, color: colorScheme.primary),
+                                Text(
+                                  'RECOMMENDED FOR YOU',
+                                  style: GoogleFonts.inter(
+                                      fontSize: 10,
+                                      fontWeight: FontWeight.bold,
+                                      letterSpacing: 1,
+                                      color: colorScheme.primary),
                                 ),
                                 const SizedBox(height: 8),
-                                Text('Deep Focus Meditation', style: theme.textTheme.titleLarge),
+                                Text('Deep Focus Meditation',
+                                    style: theme.textTheme.titleLarge),
                                 const SizedBox(height: 4),
-                                Text('15 Minutes • Mindful Flow', style: theme.textTheme.bodyMedium?.copyWith(color: colorScheme.outline)),
+                                Text('15 Minutes • Mindful Flow',
+                                    style: theme.textTheme.bodyMedium
+                                        ?.copyWith(color: colorScheme.outline)),
                               ],
                             ),
                           ),
@@ -104,11 +133,20 @@ class CloudPortalScreen extends StatelessWidget {
                         scrollDirection: Axis.horizontal,
                         padding: const EdgeInsets.symmetric(horizontal: 24),
                         children: [
-                          _SmallCloudCard(title: 'Morning Yoga', icon: Icons.self_improvement, color: Colors.blue.shade50),
+                          _SmallCloudCard(
+                              title: 'Morning Yoga',
+                              icon: Icons.self_improvement,
+                              color: Colors.blue.shade50),
                           const SizedBox(width: 16),
-                          _SmallCloudCard(title: 'Sleep Soundly', icon: Icons.nightlight_round, color: Colors.indigo.shade50),
+                          _SmallCloudCard(
+                              title: 'Sleep Soundly',
+                              icon: Icons.nightlight_round,
+                              color: Colors.indigo.shade50),
                           const SizedBox(width: 16),
-                          _SmallCloudCard(title: 'Breath Work', icon: Icons.air, color: Colors.teal.shade50),
+                          _SmallCloudCard(
+                              title: 'Breath Work',
+                              icon: Icons.air,
+                              color: Colors.teal.shade50),
                         ],
                       ).animateEntrance(index: 3),
                     ),
@@ -124,7 +162,8 @@ class CloudPortalScreen extends StatelessWidget {
 }
 
 class _SmallCloudCard extends StatelessWidget {
-  const _SmallCloudCard({required this.title, required this.icon, required this.color});
+  const _SmallCloudCard(
+      {required this.title, required this.icon, required this.color});
   final String title;
   final IconData icon;
   final Color color;
@@ -143,7 +182,9 @@ class _SmallCloudCard extends StatelessWidget {
         children: [
           Icon(icon, color: Colors.black54),
           const Spacer(),
-          Text(title, style: GoogleFonts.inter(fontWeight: FontWeight.bold, fontSize: 14, height: 1.2)),
+          Text(title,
+              style: GoogleFonts.inter(
+                  fontWeight: FontWeight.bold, fontSize: 14, height: 1.2)),
         ],
       ),
     );
