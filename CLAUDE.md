@@ -28,9 +28,8 @@ This is the load-bearing instruction. Any Flutter UI written here (or anywhere t
 - **`src/theme/taste_theme.dart`** — `TasteTheme.createTheme(seed, brightness:)` / `createScheme(...)`. The single source for Material 3 palettes; encodes "taste choices" (warmer/cooler surfaces, tighter typography tracking, elevation-0 cards). Showcase screens build their own `TasteTheme` and wrap content in a local `Theme(...)`.
 - **`src/components/`** — reusable primitives the skill prescribes: `HighEndGlassCard`, `MeshGradientBackground`, `TastefulBackground`, `TastefulBentoGrid`, `TastefulCard`, `TastefulEntrance` (staggered-animation wrapper). These are the "correct" implementations of the SKILL.md standards.
 - **`src/showcase/`** — four standalone demo screens (`ObsidianCoreScreen`, `CloudPortalScreen`, `GalacticExplorerScreen`, `MonoMinimalistScreen`), each a different aesthetic variant. Wired via `go_router` in `main.dart` (`/obsidian`, `/cloud`, `/galactic`, `/minimal`) behind a `ShowcaseSelector` landing screen.
-- **`lib/driver_main.dart`** — entrypoint that calls `enableFlutterDriverExtension()` then `app.main()`, for `flutter_driver` integration testing against the showcase.
 
-Key deps: `flutter_animate` (staggered entrances/micro-interactions), `google_fonts` (Space Mono / Inter), `go_router` (showcase nav).
+Key deps: `flutter_animate` (staggered entrances/micro-interactions), `google_fonts` (Space Mono / Inter), `go_router` (showcase nav), `flutter_staggered_grid_view` (real bento packing in `TastefulBentoGrid`).
 
 ## Commands
 
