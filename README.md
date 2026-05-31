@@ -4,6 +4,16 @@
 
 Inspired by the groundbreaking [taste-skill](https://github.com/Leonxlnx/taste-skill) by Leonxlnx, this project adapts the "v2" design philosophy for the Flutter and mobile ecosystem. It is designed to stop AI agents from generating "Material Slop" and start creating high-fidelity, premium mobile products.
 
+## 🌍 Trilingual by design (LTR · Arabic · Sorani Kurdish)
+
+Taste is not only English. The showcase ships fully **right-to-left** Arabic and Kurdish Sorani screens with script-aware fonts (Aref Ruqaa / Reem Kufi / Cairo for Arabic, Vazirmatn for Sorani), native Eastern-Arabic numerals, and traditional ornament drawn in code:
+
+| Arabesque Atelier · Arabic | Sorani Modern · Kurdish |
+| :---: | :---: |
+| <img src="docs/examples/arabic/preview.png" width="260" alt="Arabesque Atelier (Arabic, RTL)"> | <img src="docs/examples/kurdish/preview.png" width="260" alt="Sorani Modern (Kurdish, RTL)"> |
+
+All six variants are in [Examples](#-examples) below.
+
 ## 🚀 Quick Start
 
 ### 1. Installation
